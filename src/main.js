@@ -47,9 +47,7 @@ export async function executeScheduledTask(request, env, ctx, usingDemoAccount) 
                         // Check if the position is not already in the positionsToClose array
                         if (!positionsWithin24Hours.some(p => p === positions[i])) {
                             // Add the position to the positionsToClose array
-                            if (positions[i].market.instrumentName !== "EU Stocks 50") {
-                                positionsWithin24Hours.push(positions[i]);
-                            }
+                            positionsWithin24Hours.push(positions[i]);
                         }
                     }
                 }
