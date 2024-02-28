@@ -34,7 +34,7 @@ export async function executeScheduledTask(request, env, ctx, usingDemoAccount) 
         }
     });
 
-    const closedPositions = await getClosedTrades(env, 1);
+    const closedPositions = await getClosedTrades(env, 12);
 
     let positionsWithin24Hours = [];
 
