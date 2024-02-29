@@ -67,11 +67,10 @@ export async function executeScheduledTask(request, env, ctx, usingDemoAccount) 
         }
     }
 
-    
     // Create the array that contains the details needed for closure
     const positionsToClose = [];
     for (const item of positionsWithin24Hours) {
-        if (item.market.marketStatus === "TRADEABLE") {
+        if (item.market.marketStatus === "TRADEABLE" && item.market.instrumentName !== "Japan 225") {
             const positionDetailsForClosure = {
                 dealId: item.position.dealId,
                 epic: null,
