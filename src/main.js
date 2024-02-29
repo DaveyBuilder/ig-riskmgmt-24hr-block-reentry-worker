@@ -54,8 +54,8 @@ export async function executeScheduledTask(request, env, ctx, usingDemoAccount) 
                 for (let j = 0; j < closedPositionsClosedDates.length; j++) {
                     const diff = openDates[i] - closedPositionsClosedDates[j];
     
-                    // If difference <= 24 hours and the open position was created after the closed position
-                    if (diff <= 24 * 60 * 60 * 1000 && diff >= 0) {
+                    // If difference <= 12 hours and the open position was created after the closed position
+                    if (diff <= 12 * 60 * 60 * 1000 && diff >= 0) {
                         // Check if the position is not already in the positionsToClose array
                         if (!positionsWithin24Hours.some(p => p === positions[i])) {
                             // Add the position to the positionsToClose array
